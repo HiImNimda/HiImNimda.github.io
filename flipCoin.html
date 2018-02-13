@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flip a coin</title>
+</head>
+<body style="background-color:lightblue;">
+	<center><h1>Flip a coin</h1></center>
+	<center><button onclick="flipCoin()">Press here to flip a coin</button></center>
+	<br><br>
+	<center><canvas id="canvas" width="900" height="900"></canvas></center>
+	<script type="text/javascript">
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d"); 
+		var a = 0;
+		var b = 0;
+		function flipCoin(){
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.fillStyle = "black";
+			ctx.font = "20px Arial";
+			ctx.textAlign = 'center';
+			ctx.fillText("You flipped " + a + " heads!", 100, 50);
+			ctx.fillText("You flipped " + b + " tails!", 700, 50);
+			var num = Math.random()*100;
+			if (num <= 50){
+				ctx.beginPath();
+				ctx.arc(900/2,900/2,350,0,2*Math.PI);
+				ctx.stroke();
+				ctx.font = "150px Arial";
+				ctx.fillText("Heads", 900/2, 900/2);	
+				a++;
+			} else {
+				ctx.beginPath();
+				ctx.arc(900/2,900/2,350,0,2*Math.PI);
+				ctx.stroke();
+				ctx.font = "150px Arial";
+				ctx.fillText("Tails", 900/2, 900/2);
+				b++;
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Number Generator</title>
+</head>
+<body>
+	<center><h1>Random Number Generator</h1></center>
+	<center><h3>Press the button and put in 2 integers that you want a random number between</h5></center>
+	<br>
+	<center><button onclick="randomNumber()">Random Number Generator</button></center>
+	<br><br>
+	<center><canvas id="canvas" width="1600" height="900"></canvas></center>
+	<script>
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d"); 
+	
+	function randomNumber() {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	    var minNum = prompt("Please enter the minimum interger first", "Minimum integer");
+	    var maxNum = prompt("Please enter the maximum interger", "Maximum integer");
+
+	    var min = parseInt(minNum);
+	    var max = parseInt(maxNum);
+
+	    var random = Math.floor(Math.random() * (max - min + 1)) + min;
+
+	    ctx.beginPath();
+		ctx.fillStyle = "blue";
+		ctx.font = "50px Arial";
+		ctx.textAlign = 'center';
+		
+		if(max < min){
+			ctx.fillText("Your 'maximum value' is less than your 'minimum value'", 800, 50);
+		} else {
+			ctx.fillText("Your random number between " + min + " and " + max + " is " + random, 800, 50);
+		}
+	}
+	</script>
+</body>
+</html>	
