@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Roll A Die</title>
+</head>
+<body>
+	<center><h1>Roll A Die</h1></center>
+	<center><button onclick="rollDie()">Press here to roll a die</button></center> 
+	<br><br>
+	<img id = "diceOne" width = "236" height = "236" style="display: none;" src = "diceOne.png">
+	<img id = "diceTwo" width = "236" height = "236" style="display: none;" src = "diceTwo.png">
+	<img id = "diceThree" width = "236" height = "236" style="display: none;" src = "diceThree.png">
+	<img id = "diceFour" width = "236" height = "236" style="display: none;" src = "diceFour.png">
+	<img id = "diceFive" width = "236" height = "236" style="display: none;" src = "diceFive.png">
+	<img id = "diceSix" width = "236" height = "236" style="display: none;" src = "diceSix.png">
+	<center><canvas id="canvas" width="1600" height="900"></canvas></center>
+	<script>
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+
+		ctx.beginPath();
+		ctx.fillStyle = "skyblue";
+		ctx.font = "50px Arial";
+		ctx.textAlign = 'center';
+
+		function rollDie(){
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			var x = Math.floor(Math.random()*6);
+			if(x == 0){
+				ctx.fillText("You rolled a 1", 800, 50);
+				var img = document.getElementById("diceOne");
+				ctx.drawImage (img, (800-(236/2)), (200));
+			} else if (x == 1){
+				ctx.fillText("You rolled a 2", 800, 50);
+				var img = document.getElementById("diceTwo");
+				ctx.drawImage (img, (800-(236/2)), (200));
+			} else if (x == 2){
+				ctx.fillText("You rolled a 3", 800, 50);
+				var img = document.getElementById("diceThree");
+				ctx.drawImage (img, (800-(236/2)), (200));
+			} else if (x == 3){
+				ctx.fillText("You rolled a 4", 800, 50);
+				var img = document.getElementById("diceFour");
+				ctx.drawImage (img, (800-(236/2)), (200));
+			} else if (x == 4){
+				ctx.fillText("You rolled a 5", 800, 50);
+				var img = document.getElementById("diceFive");
+				ctx.drawImage (img, (800-(236/2)), (200));
+			} else if (x == 5){
+				ctx.fillText("You rolled a 6", 800, 50);
+				var img = document.getElementById("diceSix");
+				ctx.drawImage (img, (800-(236/2)), (200));
+			}
+		}
+	</script>
+</body>
+</html>
