@@ -21,9 +21,9 @@
 			ctx.fillText("You flipped " + a + " heads!", 100, 50);
 			ctx.fillText("You flipped " + b + " tails!", 700, 50);
 			var num = Math.random()*100;
-			decideSide();
+			decideSide(num);
 		}
-		function decideSide(){
+		function decideSide(num){
 			if (num <= 50){
 				drawHead();
 			} else {
