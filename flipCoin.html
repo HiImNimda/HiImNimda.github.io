@@ -21,12 +21,17 @@
 			ctx.fillText("You flipped " + a + " heads!", 100, 50);
 			ctx.fillText("You flipped " + b + " tails!", 700, 50);
 			var num = Math.random()*100;
+			decideSide();
+		}
+		function decideSide(){
 			if (num <= 50){
 				drawHead();
 			} else {
 				drawTail();
 			}
 		}
+
+		
 		function drawHead(){
 			ctx.beginPath();
 			ctx.arc(900/2,900/2,350,0,2*Math.PI);
@@ -35,6 +40,7 @@
 			ctx.fillText("Heads", 900/2, 900/2);	
 			a++;
 		}	
+		
 		function drawTail(){
 			ctx.beginPath();
 			ctx.arc(900/2,900/2,350,0,2*Math.PI);
