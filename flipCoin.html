@@ -24,12 +24,7 @@
 			if (num <= 50){
 				drawHead();
 			} else {
-				ctx.beginPath();
-				ctx.arc(900/2,900/2,350,0,2*Math.PI);
-				ctx.stroke();
-				ctx.font = "150px Arial";
-				ctx.fillText("Tails", 900/2, 900/2);
-				b++;
+				drawTail();
 			}
 		}
 		function drawHead(){
@@ -39,6 +34,14 @@
 			ctx.font = "150px Arial";
 			ctx.fillText("Heads", 900/2, 900/2);	
 			a++;
+		}	
+		function drawTail(){
+			ctx.beginPath();
+			ctx.arc(900/2,900/2,350,0,2*Math.PI);
+			ctx.stroke();
+			ctx.font = "150px Arial";
+			ctx.fillText("Tails", 900/2, 900/2);
+			b++;
 		}	
 	</script>
 </body>
