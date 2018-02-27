@@ -2,17 +2,53 @@
 <html>
 <head>
 	<title>Roll A Die</title>
+	<style>
+		ul {
+		    list-style-type: none;
+		    margin: 0;
+		    padding: 0;
+		    overflow: hidden;
+		    background-color: #333;
+		}
+
+		li {
+    		float: left;
+		}
+
+		li a {
+		    display: block;
+		    color: white;
+		    text-align: center;
+		    padding: 14px 16px;
+		    text-decoration: none;
+		}
+
+		li a:hover {
+		    background-color: #111;
+		}
+
+		.active {
+    		background-color: #4CAF50;
+		}
+	</style>	
 </head>
 <body>
+	<ul>
+		<li><a href="./homepage.html">Homepage</a></li>
+		<li><a href="./flipCoin.html">Flip a coin</a></li>
+		<li><a href="./pickingCard.html">Draw a random Card</a></li>
+		<li><a href="./RNG.html">Random number generator</a></li>
+		<li><a class="active" href="./diceRolling.html">Roll a die</a></li>
+	</ul>
 	<center><h1>Roll A Die</h1></center>
 	<center><button onclick="rollDie()">Press here to roll a die</button></center> 
 	<br><br>
-	<img id = "diceOne" width = "236" height = "236" style="display: none;" src = "diceOne.PNG">
-	<img id = "diceTwo" width = "236" height = "236" style="display: none;" src = "diceTwo.PNG">
-	<img id = "diceThree" width = "236" height = "236" style="display: none;" src = "diceThree.PNG">
-	<img id = "diceFour" width = "236" height = "236" style="display: none;" src = "diceFour.PNG">
-	<img id = "diceFive" width = "236" height = "236" style="display: none;" src = "diceFive.PNG">
-	<img id = "diceSix" width = "236" height = "236" style="display: none;" src = "diceSix.PNG">
+	<img id = "diceOne" width = "236" height = "236" style="display: none;" src = "diceOne.png">
+	<img id = "diceTwo" width = "236" height = "236" style="display: none;" src = "diceTwo.png">
+	<img id = "diceThree" width = "236" height = "236" style="display: none;" src = "diceThree.png">
+	<img id = "diceFour" width = "236" height = "236" style="display: none;" src = "diceFour.png">
+	<img id = "diceFive" width = "236" height = "236" style="display: none;" src = "diceFive.png">
+	<img id = "diceSix" width = "236" height = "236" style="display: none;" src = "diceSix.png">
 	<center><canvas id="canvas" width="1600" height="900"></canvas></center>
 	<script>
 		var canvas = document.getElementById("canvas");
