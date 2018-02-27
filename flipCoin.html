@@ -2,8 +2,44 @@
 <html>
 <head>
 	<title>Flip a coin</title>
+	<style>
+		ul {
+		    list-style-type: none;
+		    margin: 0;
+		    padding: 0;
+		    overflow: hidden;
+		    background-color: #333;
+		}
+
+		li {
+    		float: left;
+		}
+
+		li a {
+		    display: block;
+		    color: white;
+		    text-align: center;
+		    padding: 14px 16px;
+		    text-decoration: none;
+		}
+
+		li a:hover {
+		    background-color: #111;
+		}
+
+		.active {
+    		background-color: #4CAF50;
+		}
+	</style>
 </head>
 <body style="background-color:lightblue;">
+	<ul>
+		<li><a href="./homepage.html">Homepage</a></li>
+		<li><a class="active" href="./flipCoin.html">Flip a coin</a></li>
+		<li><a href="./pickingCard.html">Draw a random Card</a></li>
+		<li><a href="./RNG.html">Random number generator</a></li>
+		<li><a href="./diceRolling.html">Roll a die</a></li>
+	</ul>	
 	<center><h1>Flip a coin</h1></center>
 	<center><button onclick="flipCoin()">Press here to flip a coin</button></center>
 	<br><br>
@@ -21,34 +57,22 @@
 			ctx.fillText("You flipped " + a + " heads!", 100, 50);
 			ctx.fillText("You flipped " + b + " tails!", 700, 50);
 			var num = Math.random()*100;
-			decideSide(num);
-		}
-		function decideSide(num){
 			if (num <= 50){
-				drawHead();
+				ctx.beginPath();
+				ctx.arc(900/2,900/2,350,0,2*Math.PI);
+				ctx.stroke();
+				ctx.font = "150px Arial";
+				ctx.fillText("Heads", 900/2, 900/2);	
+				a++;
 			} else {
-				drawTail();
+				ctx.beginPath();
+				ctx.arc(900/2,900/2,350,0,2*Math.PI);
+				ctx.stroke();
+				ctx.font = "150px Arial";
+				ctx.fillText("Tails", 900/2, 900/2);
+				b++;
 			}
 		}
-
-		
-		function drawHead(){
-			ctx.beginPath();
-			ctx.arc(900/2,900/2,350,0,2*Math.PI);
-			ctx.stroke();
-			ctx.font = "150px Arial";
-			ctx.fillText("Heads", 900/2, 900/2);	
-			a++;
-		}	
-		
-		function drawTail(){
-			ctx.beginPath();
-			ctx.arc(900/2,900/2,350,0,2*Math.PI);
-			ctx.stroke();
-			ctx.font = "150px Arial";
-			ctx.fillText("Tails", 900/2, 900/2);
-			b++;
-		}	
 	</script>
 </body>
 </html>
